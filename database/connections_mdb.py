@@ -53,7 +53,7 @@ async def add_connection(group_id, user_id):
 
     else:
         try:
-             if mycol.count_documents( {"_id": user_id} ) == 0:
+            if mycol.count_documents( {"_id": user_id} ) == 0:
                 mycol2.update_one(
                     {'_id': user_id},
                     {
