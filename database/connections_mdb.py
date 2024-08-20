@@ -51,7 +51,28 @@ async def add_connection(group_id, user_id):
         except:
             logger.exception('Some error occurred!', exc_info=True)
 
-    
+    else:
+        try:
+             if mycol.count_documents( {"_id": user_id} ) == 0:
+                mycol2.update_one(
+                    {'_id': user_id},
+                    {
+                        "$push": {"group_details": group_details},
+                        "$set": {"active_group" : group_id}
+                    }
+                )
+                return True
+            else:
+                mycol.update_one(
+                    {'_id': user_id},
+                    {
+                        "$push": {"group_details": group_details},
+                        "$set": {"active_group" : group_id}
+                    }
+                )
+                return True
+        except:
+            logger.exception('Some error occurred!', exc_info=True)
 
         
 async def active_connection(user_id):
@@ -71,28 +92,7 @@ async def active_connection(user_id):
         group_id = query['active_group']
         return int(group_id) if group_id != None else None
     else:
-        group_id = query2[else:
-        try:
-            if mycol.count_documents( {"_id": user_id} ) == 0:
-                mycol2.update_one(
-                    {'_id': user_id},
-                    {
-                        "$push": {"group_details": group_details},
-                        "$set": {"active_group" : group_id}
-                    }
-                )
-                return True
-            else:
-                mycol.update_one(
-                    {'_id': user_id},
-                    {
-                        "$push": {"group_details": group_details},
-                        "$set": {"active_group" : group_id}
-                    }
-                )
-                return True
-        except:
-            logger.exception('Some error occurred!', exc_info=True)'active_group']
+        group_id = query2['active_group']
         return int(group_id) if group_id != None else None
 
 
