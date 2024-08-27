@@ -20,7 +20,7 @@ def is_enabled(value, default):
 SESSION = environ.get('SESSION', 'TechVJBot')
 API_ID = int(environ.get('API_ID', '29812187'))
 API_HASH = environ.get('API_HASH', '16b7734391023f594196a4944ace7e86')
-BOT_TOKEN = environ.get('BOT_TOKEN', "7501604815:AAFMCCmBO-9XjnLzHkbURABw1sVT2SxAPhs")
+BOT_TOKEN = environ.get('BOT_TOKEN', "7348880194:AAHE-LmzIcfXU0tZaM6JhRaRubEI3JJUi-g")
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 1800))
@@ -51,8 +51,8 @@ FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '')).
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
 
 # MongoDB information
-SECONDDB_URI = environ.get('SECONDDB_URI', "mongodb+srv://Cluster0:Cluster0@cluster0.zwzrf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://tabolo8539:0evqZDV4fC5fD17c@cluster0.cw8zxus.mongodb.net/?retryWrites=true&w=majority")
+#SECONDDB_URI = environ.get('SECONDDB_URI', "mongodb+srv://Cluster0:Cluster0@cluster0.zwzrf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://kiranjavale67:i0AdZBPo9FxXq5pw@cluster0.mk4ibzg.mongodb.net/?retryWrites=true&w=majority")
 DATABASE_NAME = environ.get('DATABASE_NAME', "techvjautobot")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'techvjcollection')
 
@@ -74,7 +74,7 @@ SUPPORT_CHAT = environ.get('SUPPORT_CHAT', '') # Support Chat Link Without https
 
 # True Or False
 AI_SPELL_CHECK = bool(environ.get('AI_SPELL_CHECK', True))
-PM_SEARCH = bool(environ.get('PM_SEARCH', False))
+PM_SEARCH = bool(environ.get('PM_SEARCH', True))
 IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', True))
 MAX_BTN = is_enabled((environ.get('MAX_BTN', "True")), True)
 IS_TUTORIAL = bool(environ.get('IS_TUTORIAL', True))
@@ -129,7 +129,7 @@ YEARS = ["1900", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998",
 
 
 # Online Stream and Download
-STREAM_MODE = bool(environ.get('STREAM_MODE', True)) # Set True or False
+STREAM_MODE = bool(environ.get('STREAM_MODE', False)) # Set True or False
 
 # If Stream Mode Is True Then Fill All Required Variable, If False Then Don't Fill.
 MULTI_CLIENT = False
@@ -139,11 +139,11 @@ if 'DYNO' in environ:
     ON_HEROKU = True
 else:
     ON_HEROKU = False
-URL = environ.get("URL", "https://testofvjfilter-1fa60b1b8498.herokuapp.com/")
+URL = environ.get("URL", "")
 
 
 # Rename Info : If True Then Bot Rename File Else Not
-RENAME_MODE = bool(environ.get('RENAME_MODE', True)) # Set True or False
+RENAME_MODE = bool(environ.get('RENAME_MODE', False)) # Set True or False
 
 # Auto Approve Info : If True Then Bot Approve New Upcoming Join Request Else Not
 AUTO_APPROVE_MODE = bool(environ.get('AUTO_APPROVE_MODE', False)) # Set True or False
