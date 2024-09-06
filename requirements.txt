@@ -10,7 +10,6 @@ yt-dlp
 youtube-dl
 requests
 ytthumb
-jinja2
 apscheduler
 pyshorteners
 colorama
@@ -43,4 +42,9 @@ dnspython==2.3.0
 ffmpeg-python>=0.2.0
 pyromod==1.5
 openai==0.25.0
+Flask==1.1.2
+gunicorn==20.1.0
+Jinja2==3.0.3
+werkzeug==2.0.2
+itsdangerous==2.0.1
 git+https://github.com/Joelkb/cinemagoer
